@@ -11,7 +11,25 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        lab0(10, 10000);
+        //lab0(10, 10000);
+        lab1("abaaabacccaabbaccaababacaababaac", "aab");
+    }
+
+
+    /////////////////////////////////////////////////
+    // Lab code testing below. Do not touch below. //
+    /////////////////////////////////////////////////
+    
+    private static void lab1(String text, String pattern) {
+        print("Lab 1");
+        print("Text: " + text + "\nPattern: " + pattern);
+        Timer.startTimer();
+        print("\nNaive Method\n" + Lab1.naive(text, pattern).toString());  
+        print(Timer.getTime());
+        Timer.startTimer();
+        print("\nRabin Karp Algorithm\n" + Lab1.rabinKarp(text, pattern).toString()); 
+        print(Timer.getTime());
+        print("");
     }
 
     private static void lab0(int arrSize, int maxNumber) {
@@ -25,18 +43,20 @@ public class Main {
         
         print("\nInsertion Sort");
         Timer.startTimer();
-        print(Timer.getTime());
         print(Lab0.insertionSort(array));
+        print(Timer.getTime());
 
         print("\nMerge Sort");
         Timer.startTimer();
-        print(Timer.getTime());
         print(Lab0.mergeSort(array));
+        print(Timer.getTime());
 
         print("\nRadix Sort");
         Timer.startTimer();
-        print(Timer.getTime());
         print(Lab0.radixSort(array));
+        print(Timer.getTime());
+
+        print("");
     }
 
     public static void print(String arg) {

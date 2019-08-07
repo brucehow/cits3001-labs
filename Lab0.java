@@ -5,7 +5,7 @@ public class Lab0 {
     private static int[] arr; // Used for mergeSort
 
     /**
-     * Perform the insertion sort on the given array
+     * Perform the insertion sort algorithm on the given array
      * @param array array to perform the insertion sort on
      * @return the sorted array
      */
