@@ -12,7 +12,8 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args) {
         //lab0(10, 10000);
-        lab1("abaaabacccaabbaccaababacaababaac", "aab");
+        //lab1("abaaabacccaabbaccaababacaababaac", "aab");
+        lab2();
     }
 
 
@@ -57,6 +58,14 @@ public class Main {
         print(Timer.getTime());
 
         print("");
+    }
+
+    public static void lab2() {
+        KnapsackImp ks = new KnapsackImp();
+        int values[] = {60, 100, 120};
+        int weights[] = {10, 20, 30};
+        int capacity = 50;
+        System.out.println(ks.fractionalKnapsack(weights, values, capacity));
     }
 
     public static void print(String arg) {
