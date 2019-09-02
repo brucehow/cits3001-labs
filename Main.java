@@ -1,3 +1,7 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -11,9 +15,7 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-        //lab0(10, 10000);
-        //lab1("abaaabacccaabbaccaababacaababaac", "aab");
-        lab2();
+        // Nothing to test
     }
 
 
@@ -66,6 +68,27 @@ public class Main {
         int weights[] = {10, 20, 30};
         int capacity = 50;
         System.out.println(ks.fractionalKnapsack(weights, values, capacity));
+    }
+
+    public static void lab4() throws IOException {
+        String[] dict = new String[58109];
+        FileInputStream fstream = new FileInputStream("corncob_caps.txt");
+        BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
+
+        String strLine;
+        int i = 0;
+        while ((strLine = br.readLine()) != null)   {
+            dict[i] = strLine;
+            i++;
+        }
+        fstream.close();
+
+
+        WordChessImp wc = new WordChessImp();
+        String[] res = wc.findPath(dict, "CENT", "DIME");
+        for (int j = 0; j < res.length; j++) {
+            System.out.println(res[j]);
+        }
     }
 
     public static void print(String arg) {
